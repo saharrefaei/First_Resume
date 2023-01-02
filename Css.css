@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+.rotater {
+    transform-origin: top left;
+    transition: transform 0.9s linear;
+}
+
+.rotater.activerot {
+    transform: rotate(-20deg);
+
+}
+
+.navigationbar {
+    background: rgb(1, 36, 0);
+    background: linear-gradient(90deg, rgba(1, 36, 0, 1) 0%, rgba(33, 108, 0, 0.908000700280112) 100%);
+    position: sticky;
+    overflow: none;
+    height: 100px;
+}
+
+
+.navbar {
+
+    border-radius: 50%;
+    width: 6%;
+    position: sticky;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -40px;
+    margin-top: -50px;
+
+}
+
+.navbar .open {
+    padding-left: 20px;
+    padding-top: 21px;
+    transform: translateY(8px);
+}
+
+.navbar .open.openrotate {
+    padding-top: 19px;
+    margin-left: -20px;
+}
+
+.navbar .close {
+    /* rotate 206 degree */
+    margin-left: -25px;
+}
+
+.navbar .close.closerotate {
+    margin-left: -3px;
+    margin-top: -15px;
+}
+
+
+
+.navbar.rotate {
+    transform: rotate(210deg);
+    border-radius: 50%;
+    width: 7%;
+    position: sticky;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -40px;
+    margin-top: -50px;
+}
+
+@media only screen and (min-width: 3350px) {
+    .navbar {
+        width: 3%
+    }
+
+    .navbar .open {
+        padding-left: 28px;
+    }
+}
+
+@media only screen and (max-width: 1092px) {
+    .navbar {
+        width: 7%
+    }
+
+    .navbar .open {
+        padding-left: 16px;
+    }
+}
+
+.navbar .navcircle {
+    background-color: red;
+    margin-top: 0px;
+    border-radius: 50%;
+}
+
+.navigationbar .navbar li {
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    padding: 10px 60px;
+}
+
+.navigationbar .navbar li:hover {
+    color: aliceblue;
+    /* display: flex;
+    justify-content: center; */
+    background-color: var(--color-green);
+    list-style: none;
+    padding: 10px 60px 10px 60px;
+    border-radius: 68%;
+}
+
+.navigationbar .navbar ul {
+    display: flex;
+    justify-self: end;
+}
+
+.navigationbar .navbar img {
+    width: 20%;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 92.3vh;
+    overflow: hidden;
+    text-align: center;
+
+}
+
+.container {
+    height: 100vh;
+    top: 0;
+    transition: transform 1s ease-in-out;
+
+}
+
+.container>main {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+.down {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    opacity: 0.4;
+    border: 1px seashell;
+    /* background-color: none; */
+    z-index: 1;
+    left: 45%;
+    top: 80%;
+}
+
+.cards {
+    padding: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+
+    width: 230px;
+    height: 325px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    perspective: 150rem;
+    max-width: 400px;
+    box-shadow: none;
+    background: none;
+}
+
+.card-side {
+    height: 20rem;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    padding: 2rem;
+    color: white;
+}
+
+.card-side.back {
+    transform: rotateY(-110deg);
+    background: radial-gradient(circle, rgba(79, 113, 43, 1) 0%, rgba(8, 60, 12, 1) 100%);
+}
+
+.card-side.front {
+    background: rgb(79, 113, 43);
+    background: linear-gradient(90deg, rgba(21, 43, 2, 1) 0%, rgba(8, 92, 1, 0.9416141456582633) 100%);
+
+}
+
+.card:hover .card-side.front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+    transform: rotateY(0deg);
+}
