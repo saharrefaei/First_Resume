@@ -32,6 +32,7 @@ body {
     border-radius: 50%;
     width: 6%;
     position: sticky;
+    background-color: white;
     padding: 30px;
     display: flex;
     flex-direction: row;
@@ -177,7 +178,7 @@ body {
 }
 
 .card {
-
+width: fit-content;
     width: 230px;
     height: 325px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -188,6 +189,7 @@ body {
 }
 
 .card-side {
+    
     height: 20rem;
     border-radius: 15px;
     transition: all 0.8s ease;
